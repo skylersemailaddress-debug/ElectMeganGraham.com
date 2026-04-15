@@ -1,0 +1,352 @@
+/* FINAL CAMPAIGN POLISH PASS V1
+   Purpose: spacing rhythm, typography scale, button styling,
+   card design, section transitions.
+*/
+
+:root{
+  --mg-navy:#173250;
+  --mg-red:#c8362c;
+  --mg-red-dark:#a32020;
+  --mg-ink:#13233a;
+  --mg-text:#445168;
+  --mg-soft:#eef4fb;
+  --mg-light:#f6f8fb;
+  --mg-line:rgba(23,50,80,.10);
+  --mg-shadow:0 14px 46px rgba(19,35,58,.08);
+  --mg-radius:20px;
+}
+
+/* Typography rhythm */
+body{
+  color:var(--mg-text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3,h4,
+.hero-copy h1,
+.section-title,
+.page-hero h1{
+  color:var(--mg-ink);
+  letter-spacing:-0.02em;
+}
+
+.hero-copy h1{
+  color:#fff !important;
+  font-size:clamp(2.85rem,4.6vw,4.35rem) !important;
+  line-height:1.01 !important;
+  margin:0 0 18px !important;
+}
+
+.page-hero h1{
+  font-size:clamp(2.2rem,4.5vw,3.75rem);
+  line-height:1.04;
+  margin-bottom:16px;
+}
+
+.section-title{
+  font-size:clamp(1.95rem,3.4vw,3.1rem);
+  line-height:1.08;
+  margin:10px 0 18px;
+}
+
+.section-label,
+.hero-kicker{
+  letter-spacing:.14em;
+}
+
+.section-text,
+.page-hero p,
+.content-card p,
+.feature-card p,
+.news-card p,
+.event-card p,
+.download-card p,
+.press-card p,
+.resource-row p{
+  font-size:1.04rem;
+  line-height:1.78;
+}
+
+/* Section rhythm */
+.section{
+  padding:88px 0 !important;
+}
+
+.page-hero{
+  padding:120px 0 62px !important;
+}
+
+.section + .section{
+  position:relative;
+}
+
+.section-light + .section-gray,
+.section-gray + .section-light,
+.section-light + .section-soft-blue,
+.section-soft-blue + .section-light,
+.section-light + .section-navy,
+.section-navy + .section-light,
+.section-light + .section-red-band,
+.section-soft-blue + .section-gray,
+.section-gray + .section-soft-blue{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+}
+
+.cards-top-gap{
+  margin-top:34px !important;
+}
+
+.split-section{
+  gap:42px !important;
+}
+
+/* Card system normalization */
+.content-card,
+.feature-card,
+.news-card,
+.event-card,
+.download-card,
+.press-card,
+.form-card,
+.quick-action,
+.resource-row,
+.info-card{
+  border:1px solid var(--mg-line) !important;
+  border-radius:var(--mg-radius) !important;
+  box-shadow:var(--mg-shadow) !important;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.content-card:hover,
+.feature-card:hover,
+.news-card:hover,
+.event-card:hover,
+.download-card:hover,
+.press-card:hover,
+.quick-action:hover,
+.info-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 54px rgba(19,35,58,.10) !important;
+  border-color:rgba(23,50,80,.16) !important;
+}
+
+.content-card,
+.feature-card,
+.news-card,
+.event-card,
+.download-card,
+.press-card,
+.quick-action,
+.info-card{
+  padding:28px !important;
+}
+
+.content-card h3,
+.feature-card h3,
+.news-card h3,
+.event-card h3,
+.download-card h3,
+.press-card h3,
+.info-card h3{
+  font-size:1.22rem;
+  line-height:1.22;
+  margin:0 0 12px !important;
+  color:var(--mg-ink);
+}
+
+.quote-card{
+  background:linear-gradient(180deg,#ffffff 0%, #fcfdff 100%) !important;
+}
+
+.quote-card span{
+  color:var(--mg-red-dark) !important;
+}
+
+/* Buttons */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-feedback,
+.resource-row a{
+  transition:transform .14s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-feedback{
+  min-height:50px !important;
+  padding:0 20px !important;
+  border-radius:999px !important;
+  font-weight:800 !important;
+  letter-spacing:.01em;
+  box-shadow:none;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--mg-red) 0%, var(--mg-red-dark) 100%) !important;
+  color:#fff !important;
+  border:1px solid rgba(163,32,32,.15) !important;
+  box-shadow:0 10px 26px rgba(163,32,32,.18) !important;
+}
+
+.btn-primary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 32px rgba(163,32,32,.24) !important;
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.18) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  backdrop-filter:blur(2px);
+}
+
+.btn-secondary:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.24) !important;
+}
+
+.btn-outline,
+.btn-feedback{
+  background:#fff !important;
+  color:var(--mg-ink) !important;
+  border:1px solid rgba(23,50,80,.12) !important;
+  box-shadow:0 8px 22px rgba(19,35,58,.06) !important;
+}
+
+.btn-outline:hover,
+.btn-feedback:hover{
+  transform:translateY(-1px);
+  border-color:rgba(23,50,80,.22) !important;
+  box-shadow:0 12px 28px rgba(19,35,58,.09) !important;
+}
+
+/* Hero polish */
+.hero-lead{
+  max-width:560px !important;
+}
+
+.hero-actions,
+.hero-actions-expanded{
+  gap:14px !important;
+}
+
+.trust-pill{
+  border-radius:999px !important;
+  border:1px solid rgba(23,50,80,.08);
+  box-shadow:0 8px 24px rgba(19,35,58,.05);
+  font-weight:800;
+  letter-spacing:.01em;
+}
+
+/* Forms */
+input, textarea, select{
+  border-radius:16px !important;
+  border:1px solid rgba(23,50,80,.14) !important;
+  padding:14px 16px !important;
+  background:#fbfdff !important;
+  transition:border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline:none;
+  border-color:rgba(200,54,44,.45) !important;
+  box-shadow:0 0 0 4px rgba(200,54,44,.09) !important;
+  background:#fff !important;
+}
+
+/* Section snippets added later */
+.benefits-section,
+.community-section,
+.timeline-section,
+.voter-tools,
+.feedback-section{
+  padding:88px 0;
+}
+
+.benefits-section h2,
+.community-section h2,
+.timeline-section h2,
+.voter-tools h2,
+.feedback-section h2{
+  font-size:clamp(1.9rem,3.2vw,3rem);
+  line-height:1.08;
+  text-align:center;
+  color:var(--mg-ink);
+  margin:0 0 14px;
+  letter-spacing:-.02em;
+}
+
+.feedback-section p{
+  max-width:720px;
+  margin:0 auto 18px;
+  font-size:1.04rem;
+}
+
+.benefit-card,
+.tool-card,
+.timeline div,
+.community-grid div{
+  border-radius:var(--mg-radius) !important;
+  border:1px solid var(--mg-line) !important;
+  box-shadow:var(--mg-shadow) !important;
+}
+
+.benefit-card,
+.tool-card,
+.timeline div{
+  background:#fff !important;
+}
+
+.community-grid div{
+  background:linear-gradient(180deg,#f4f7fb 0%, #edf2f7 100%) !important;
+  color:var(--mg-ink);
+  font-weight:800;
+}
+
+.benefit-card h3,
+.tool-card h3,
+.timeline h3{
+  color:var(--mg-ink);
+  margin-top:0;
+}
+
+/* Footer polish */
+.site-footer{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.footer-grid h4{
+  margin-bottom:12px;
+  color:#fff;
+  letter-spacing:.01em;
+}
+
+/* Mobile */
+@media (max-width: 980px){
+  .section{
+    padding:68px 0 !important;
+  }
+  .page-hero{
+    padding:110px 0 52px !important;
+  }
+  .content-card,
+  .feature-card,
+  .news-card,
+  .event-card,
+  .download-card,
+  .press-card,
+  .quick-action,
+  .info-card{
+    padding:22px !important;
+  }
+  .benefits-grid,
+  .tools-grid{
+    grid-template-columns:1fr !important;
+  }
+}

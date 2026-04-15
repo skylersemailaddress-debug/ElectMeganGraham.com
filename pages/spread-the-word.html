@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spread the Word | Megan Graham for Elkhart County Clerk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/campaign-design-system.css" />
+  <link rel="stylesheet" href="../css/campaign-final.css" />    
+
+
+  <link rel="stylesheet" href="../css/master-layout-lock.css" />
+</head>
+<body>
+<header class="site-header" role="banner">
+    <div class="container nav">
+        <a class="brand" href="../index.html" aria-label="Megan Graham for Elkhart County Clerk">
+            <span class="brand-name">MEGAN GRAHAM</span>
+            <span class="brand-office">for Elkhart County Clerk</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary">
+            <a href="../index.html">Home</a>
+            <a href="../pages/about.html">Meet Megan</a>
+            <a href="../pages/why-megan.html">Why Megan</a>
+            <a href="../pages/priorities.html">Priorities</a>
+            <a href="../pages/vote.html">Vote Info</a>
+            <a href="../pages/events.html">Events</a>
+            <a href="../pages/volunteer.html">Volunteer</a>
+            <a class="nav-donate" href="../pages/donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+  <section class="page-hero"><div class="container narrow"><p class="section-label">Spread the Word</p><h1>Make the campaign easier to share.</h1><p>Supporters should be able to text, email, or post a clear campaign message without having to write it from scratch.</p></div></section>
+  <section class="section section-light section-standard"><div class="container quick-links-grid">
+    <article class="quick-action"><h3>General Campaign Share</h3><textarea id="share-general" class="share-copy">I'm supporting Megan Graham for Elkhart County Clerk.
+
+Professional Systems. Clear Records. Public Trust.
+
+Learn more here:
+
+{{HOME_URL}}</textarea><div class="share-actions"><a class="btn btn-primary" data-copy-target="share-general" href="#">Copy</a><a class="btn btn-outline" data-share-mode="text" data-share-url="" data-share-text="I'm supporting Megan Graham for Elkhart County Clerk. Professional Systems. Clear Records. Public Trust." href="#">Text It</a></div></article>
+    <article class="quick-action"><h3>Register to Vote Share</h3><textarea id="share-vote" class="share-copy">Make sure you're registered to vote in Indiana and know where to vote in Elkhart County.
+
+Use this page:
+
+{{VOTE_URL}}</textarea><div class="share-actions"><a class="btn btn-primary" data-copy-target="share-vote" href="#">Copy</a><a class="btn btn-outline" data-share-mode="text" data-share-url="" data-share-text="Make sure you're registered to vote in Indiana and know where to vote in Elkhart County." href="#">Text It</a></div></article>
+    <article class="quick-action"><h3>Volunteer Share</h3><textarea id="share-volunteer" class="share-copy">Want to help the campaign? Volunteer here:
+
+{{VOLUNTEER_URL}}</textarea><div class="share-actions"><a class="btn btn-primary" data-copy-target="share-volunteer" href="#">Copy</a><a class="btn btn-outline" data-share-mode="text" data-share-url="" data-share-text="Want to help the campaign? Volunteer here:" href="#">Text It</a></div></article>
+    <article class="quick-action"><h3>Donate Share</h3><textarea id="share-donate" class="share-copy">If you want to support Megan Graham for Elkhart County Clerk, here is the donation page:
+
+{{DONATE_URL}}</textarea><div class="share-actions"><a class="btn btn-primary" data-copy-target="share-donate" href="#">Copy</a><a class="btn btn-outline" data-share-mode="text" data-share-url="" data-share-text="If you want to support Megan Graham for Elkhart County Clerk, here is the donation page:" href="#">Text It</a></div></article>
+  </div></section>
+</main>
+<div class="sticky-bar"><a href="../pages/volunteer.html">Volunteer</a><a href="../pages/updates.html">Stay Updated</a><a href="../pages/donate.html">Donate</a></div>
+<script src="../js/share-tools.js"></script>
+<script>
+(function(){
+  var home = new URL("../index.html", window.location.href).href;
+  var vote = new URL("vote.html", window.location.href).href;
+  var volunteer = new URL("volunteer.html", window.location.href).href;
+  var donate = new URL("donate.html", window.location.href).href;
+
+  var replacements = {
+    "{{HOME_URL}}": home,
+    "{{VOTE_URL}}": vote,
+    "{{VOLUNTEER_URL}}": volunteer,
+    "{{DONATE_URL}}": donate
+  };
+
+  document.querySelectorAll("textarea.share-copy").forEach(function(box){
+    Object.keys(replacements).forEach(function(key){
+      box.value = box.value.replace(key, replacements[key]);
+    });
+  });
+
+  document.querySelectorAll("[data-share-url='']").forEach(function(el){
+    if (el.closest(".quick-action")) {
+      var title = el.closest(".quick-action").querySelector("h3").textContent;
+      if (title.indexOf("Vote") >= 0) el.setAttribute("data-share-url", vote);
+      else if (title.indexOf("Volunteer") >= 0) el.setAttribute("data-share-url", volunteer);
+      else if (title.indexOf("Donate") >= 0) el.setAttribute("data-share-url", donate);
+      else el.setAttribute("data-share-url", home);
+    }
+  });
+})();
+</script>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Megan Graham</h3>
+            <p>Professional Systems. Clear Records. Public Trust.</p>
+            <p class="footer-tagline">Government works best when it runs on clear systems that serve the public.</p>
+        </div>
+
+        <div>
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="../pages/about.html">Meet Megan</a></li>
+                <li><a href="../pages/why-megan.html">Why Megan</a></li>
+                <li><a href="../pages/priorities.html">Priorities</a></li>
+                <li><a href="../pages/first-100-days.html">First 100 Days</a></li>
+                <li><a href="../pages/events.html">Events</a></li>
+                <li><a href="../pages/updates.html">Updates</a></li>
+                <li><a href="../pages/press-media.html">Press &amp; Media</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Take Action</h4>
+            <ul>
+                <li><a href="../pages/vote.html">Vote Info</a></li>
+                <li><a href="../pages/ride-to-the-polls.html">Ride to the Polls</a></li>
+                <li><a href="../pages/volunteer.html">Volunteer</a></li>
+                <li><a href="../pages/yard-sign.html">Request a Yard Sign</a></li>
+                <li><a href="../pages/spread-the-word.html">Spread the Word</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container footer-bottom">
+        <p>Paid for by Megan Graham for Elkhart County Clerk</p>
+        <div class="footer-links">
+            <a href="../pages/donate.html">Donate</a>
+            <a href="../pages/transparency.html">Transparency</a>
+            <a href="../pages/contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

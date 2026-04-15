@@ -1,0 +1,204 @@
+/* =========================================================
+   MASTER LAYOUT LOCK
+   Final authority layer for shared site chrome + spacing
+   ========================================================= */
+
+:root {
+  --site-max-width: 1200px;
+  --header-height: 76px;
+  --section-pad-y: clamp(56px, 7vw, 96px);
+  --section-pad-x: clamp(20px, 4vw, 40px);
+  --content-gap: clamp(20px, 3vw, 32px);
+  --footer-pad-y: 48px;
+  --sticky-cta-height: 72px;
+  --site-radius: 18px;
+  --site-shadow: 0 12px 40px rgba(0,0,0,.10);
+  --site-border: 1px solid rgba(0,0,0,.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: calc(var(--sticky-cta-height) + 16px);
+}
+
+.site-header,
+header.site-header,
+header[role="banner"],
+body > header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,.94) !important;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.site-header .container,
+header.site-header .container,
+header[role="banner"] .container,
+body > header .container,
+.site-nav,
+.nav-shell,
+.nav-container {
+  max-width: var(--site-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--section-pad-x) !important;
+  padding-right: var(--section-pad-x) !important;
+}
+
+.site-header,
+header.site-header,
+header[role="banner"],
+body > header,
+.site-nav,
+.nav-shell,
+.nav-container {
+  min-height: var(--header-height) !important;
+}
+
+main,
+.site-main,
+.page-main {
+  width: 100%;
+}
+
+main > section,
+.site-main > section,
+.page-main > section,
+.section,
+.content-section,
+.page-section {
+  padding-top: var(--section-pad-y) !important;
+  padding-bottom: var(--section-pad-y) !important;
+  padding-left: var(--section-pad-x) !important;
+  padding-right: var(--section-pad-x) !important;
+}
+
+.container,
+.section-container,
+.content-wrap,
+.inner,
+.wrapper {
+  max-width: var(--site-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero,
+.page-hero,
+.home-hero {
+  padding-top: calc(var(--header-height) + 28px) !important;
+  padding-bottom: clamp(56px, 9vw, 110px) !important;
+}
+
+.hero .container,
+.page-hero .container,
+.home-hero .container {
+  display: grid;
+  gap: var(--content-gap);
+  align-items: center;
+}
+
+.cards,
+.card-grid,
+.grid,
+.feature-grid,
+.stats-grid {
+  gap: var(--content-gap) !important;
+}
+
+.card,
+.info-card,
+.feature-card,
+.stat-card,
+.volunteer-card,
+.donate-card {
+  border: var(--site-border) !important;
+  border-radius: var(--site-radius) !important;
+  box-shadow: var(--site-shadow) !important;
+  overflow: clip;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+footer,
+.site-footer,
+body > footer {
+  width: 100%;
+  padding-top: var(--footer-pad-y) !important;
+  padding-bottom: calc(var(--footer-pad-y) + 8px) !important;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+footer .container,
+.site-footer .container,
+body > footer .container {
+  max-width: var(--site-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--section-pad-x) !important;
+  padding-right: var(--section-pad-x) !important;
+}
+
+.sticky-cta,
+.bottom-cta,
+.floating-cta,
+.mobile-cta {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 1100 !important;
+  min-height: var(--sticky-cta-height) !important;
+  background: rgba(255,255,255,.96) !important;
+  border-top: 1px solid rgba(0,0,0,.10) !important;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.08) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.sticky-cta .container,
+.bottom-cta .container,
+.floating-cta .container,
+.mobile-cta .container {
+  max-width: var(--site-max-width) !important;
+  margin: 0 auto !important;
+  padding: 12px var(--section-pad-x) !important;
+}
+
+nav a[aria-current="page"],
+.site-nav a[aria-current="page"] {
+  font-weight: 700 !important;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+    --sticky-cta-height: 80px;
+    --section-pad-y: 40px;
+    --section-pad-x: 18px;
+  }
+
+  .hero,
+  .page-hero,
+  .home-hero {
+    padding-top: calc(var(--header-height) + 20px) !important;
+  }
+}

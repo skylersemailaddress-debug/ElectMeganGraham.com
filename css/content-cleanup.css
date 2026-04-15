@@ -1,0 +1,138 @@
+/* =========================================================
+   CONTENT CLEANUP LAYER
+   Shared spacing, grids, cards, and page-body consistency
+   ========================================================= */
+
+:root {
+  --content-max-width: 1200px;
+  --section-space: clamp(48px, 7vw, 96px);
+  --stack-space: clamp(16px, 2.5vw, 28px);
+  --grid-gap: clamp(18px, 2.5vw, 28px);
+  --card-radius: 18px;
+  --card-padding: clamp(18px, 2.5vw, 28px);
+  --card-border: 1px solid rgba(0,0,0,.08);
+  --card-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+main > section,
+.page-main > section,
+.site-main > section,
+.section,
+.page-section,
+.content-section {
+  margin: 0;
+}
+
+.section-tight {
+  padding-top: calc(var(--section-space) * .65) !important;
+  padding-bottom: calc(var(--section-space) * .65) !important;
+}
+
+.section-standard {
+  padding-top: var(--section-space) !important;
+  padding-bottom: var(--section-space) !important;
+}
+
+.section-large {
+  padding-top: calc(var(--section-space) * 1.2) !important;
+  padding-bottom: calc(var(--section-space) * 1.2) !important;
+}
+
+.stack > * + *,
+.flow > * + * {
+  margin-top: var(--stack-space) !important;
+}
+
+.grid-2,
+.grid-3,
+.grid-4,
+.cards,
+.card-grid,
+.feature-grid,
+.stats-grid {
+  display: grid;
+  gap: var(--grid-gap) !important;
+}
+
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.card,
+.info-card,
+.feature-card,
+.stat-card,
+.cta-card,
+.donate-card,
+.volunteer-card,
+.update-card,
+.event-card {
+  background: #fff;
+  border: var(--card-border) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: var(--card-shadow) !important;
+  padding: var(--card-padding) !important;
+}
+
+.card > *:first-child,
+.info-card > *:first-child,
+.feature-card > *:first-child,
+.stat-card > *:first-child {
+  margin-top: 0 !important;
+}
+
+.card > *:last-child,
+.info-card > *:last-child,
+.feature-card > *:last-child,
+.stat-card > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+main p,
+main ul,
+main ol,
+main blockquote {
+  max-width: 70ch;
+}
+
+main ul,
+main ol {
+  padding-left: 1.25rem;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  line-height: 1.15;
+}
+
+main p {
+  line-height: 1.65;
+}
+
+.actions,
+.button-row,
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .cards,
+  .card-grid,
+  .feature-grid,
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
