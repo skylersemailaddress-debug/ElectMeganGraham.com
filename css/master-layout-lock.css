@@ -10,7 +10,7 @@
   --section-pad-x: clamp(20px, 4vw, 40px);
   --content-gap: clamp(20px, 3vw, 32px);
   --footer-pad-y: 48px;
-  --sticky-cta-height: 72px;
+  --sticky-cta-height: 16px;
   --site-radius: 18px;
   --site-shadow: 0 12px 40px rgba(0,0,0,.10);
   --site-border: 1px solid rgba(0,0,0,.08);
@@ -28,7 +28,7 @@ body {
 body::after {
   content: "";
   display: block;
-  height: calc(var(--sticky-cta-height) + 16px);
+  height: 12px;
 }
 
 .site-header,
@@ -75,9 +75,9 @@ main,
   width: 100%;
 }
 
-main > section,
-.site-main > section,
-.page-main > section,
+main > section:not(.hero):not(.trust-bar):not(.page-hero):not(.home-hero),
+.site-main > section:not(.hero):not(.trust-bar):not(.page-hero):not(.home-hero),
+.page-main > section:not(.hero):not(.trust-bar):not(.page-hero):not(.home-hero),
 .section,
 .content-section,
 .page-section {
@@ -100,8 +100,15 @@ main > section,
 .hero,
 .page-hero,
 .home-hero {
-  padding-top: calc(var(--header-height) + 28px) !important;
-  padding-bottom: clamp(56px, 9vw, 110px) !important;
+  padding-top: clamp(8px, 2vw, 18px) !important;
+  padding-bottom: clamp(10px, 3vw, 26px) !important;
+}
+
+.trust-bar {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  padding-left: var(--section-pad-x) !important;
+  padding-right: var(--section-pad-x) !important;
 }
 
 .hero .container,
@@ -191,7 +198,7 @@ nav a[aria-current="page"],
 @media (max-width: 768px) {
   :root {
     --header-height: 68px;
-    --sticky-cta-height: 80px;
+    --sticky-cta-height: 16px;
     --section-pad-y: 40px;
     --section-pad-x: 18px;
   }

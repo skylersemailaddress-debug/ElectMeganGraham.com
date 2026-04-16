@@ -1,6 +1,17 @@
 .DS_Store
 Thumbs.db
+desktop.ini
 *.log
 .env
 .vscode/
 .idea/
+
+# Local temp assets and archives
+.tmp_campaign_images/
+.tmp_megan_images/
+*.zip
+
+# Generated/local working files
+index.generated.html
+*.tmp
+*.bak
