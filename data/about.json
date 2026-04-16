@@ -1,0 +1,19 @@
+{
+  "intro": {
+    "label": "Meet Megan",
+    "headline": "Professional, practical, and focused on how county government should work.",
+    "body": "Megan Graham is running for Elkhart County Clerk because this office should be organized, reliable, and easier for people to use."
+  },
+  "whoSheIs": {
+    "headline": "A candidate focused on competence, service, and follow-through.",
+    "body": "This section is structured for real biography details to be added. It should include background, experience, and local ties."
+  },
+  "whyRunning": {
+    "headline": "Why She’s Running",
+    "body": "The Clerk’s Office affects daily life for voters, families, attorneys, employers, and businesses."
+  },
+  "whatSheBrings": {
+    "headline": "What She Brings",
+    "body": "This section will highlight relevant experience, management ability, and systems thinking."
+  }
+}
