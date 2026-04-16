@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "kicker": "Megan Graham for Elkhart County Clerk",
+    "headline": "Professional Systems. Clear Records. Public Trust.",
+    "lead": "A practical plan to bring professional systems, reliable records, and transparent elections back to the Elkhart County Clerk’s Office.",
+    "primaryCta": {
+      "label": "Volunteer",
+      "href": "pages/volunteer.html"
+    },
+    "secondaryCta": {
+      "label": "Donate",
+      "href": "pages/donate.html"
+    }
+  },
+  "trustPills": [
+    "Professional Systems",
+    "Clear Records",
+    "Public Trust"
+  ],
+  "whyRaceMatters": {
+    "label": "Why This Race Matters",
+    "title": "The Clerk’s Office affects daily life in Elkhart County.",
+    "body": "The office handles elections, court records, filings, and public documents that residents, businesses, attorneys, and families rely on every day. When systems work well, government feels reliable. When they do not, people feel the consequences.",
+    "body2": "Elkhart County deserves a Clerk’s Office that runs with strong systems, professional standards, and clear accountability."
+  },
+  "priorities": [
+    {
+      "title": "Secure Elections",
+      "body": "Strengthen election procedures and transparency so voters can trust the process."
+    },
+    {
+      "title": "Reliable Records",
+      "body": "Improve organization, workflow, and access to the records residents rely on."
+    },
+    {
+      "title": "Professional Service",
+      "body": "Run the office with stronger systems, clear procedures, and better citizen service."
+    }
+  ]
+}
